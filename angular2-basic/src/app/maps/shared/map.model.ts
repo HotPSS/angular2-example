@@ -3,4 +3,5 @@ export class MapModel {
     public Lng: number;
     public Label: string;
     public Draggable: boolean;
+    public Icon: string;
 }
