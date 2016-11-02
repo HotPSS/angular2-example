@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { CustomerListComponent, CustomerCreateComponent, CustomerUpdateComponent, CustomerService } from './customers';
+import { CustomerListComponent, CustomerCreateComponent, CustomerUpdateComponent } from './customers';
 import { MapComponent } from './maps';
 import { LoginComponent } from './login';
 import { AuthGuard, AuthenticationService } from './auth';
@@ -44,7 +44,7 @@ import { AuthGuard, AuthenticationService } from './auth';
       apiKey: 'AIzaSyAmjXBxqN3NNXnEr4lhyDH27mfAyPZoZOM'
     })
   ],
-  providers: [AuthGuard, AuthenticationService, CustomerService],
+  providers: [AuthGuard, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
