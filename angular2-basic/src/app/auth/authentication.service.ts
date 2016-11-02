@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
- 
+
 @Injectable()
 export class AuthenticationService {
-    public webApiUrl: string = 'http://192.168.10.3:7777/api/token';
+    public webApiUrl: string = 'http://localhost:6967/api/gettoken';
+    // private headers = new Headers({'Content-Type': 'application/json'});
+    private headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
     public token: string;
 
     constructor(private http: Http) {
@@ -15,10 +17,11 @@ export class AuthenticationService {
     }
 
     login(username: string, password: string): Observable<boolean> {
-        return this.http.post(this.webApiUrl, JSON.stringify({ username: username, password: password }))
+        let body = `username=${username}&password=${password}`;
+        return this.http.post(this.webApiUrl, body /*JSON.stringify({ username: username, token: token })*/, {headers: this.headers})
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
-                let token = response.json() && response.json().token;
+                let token = response.json() && response.json().access_token;
                 if (token) {
                     // set token property
                     this.token = token;

@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
-import { Routing } from './app.routing';
-// import { AppRoutingModule } from '.';
+// import { Routing } from './app.routing';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -37,7 +37,8 @@ import { AuthGuard, AuthenticationService } from './auth';
     BrowserModule,
     FormsModule,
     HttpModule,
-    Routing,
+    AppRoutingModule,
+    // Routing,
     NgbModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAmjXBxqN3NNXnEr4lhyDH27mfAyPZoZOM'
