@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthenticationService } from '../auth';
+import { HeaderEventsManager } from '../shared/headerEventManager';
 import { LoginModel } from '.';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  providers: [HeaderEventsManager]
 })
 export class LoginComponent implements OnInit {
 
@@ -17,9 +19,11 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private authenticationService: AuthenticationService) { }
+    private authenticationService: AuthenticationService,
+    private headerEventsManager: HeaderEventsManager) { }
 
   ngOnInit() {
+    this.headerEventsManager.showNavBar.emit(false);
     this.authenticationService.logout();
   }
 
@@ -29,6 +33,7 @@ export class LoginComponent implements OnInit {
         .subscribe(result => {
           if (result === true) {
             // login successful
+            this.headerEventsManager.showNavBar.emit(true);
             this.router.navigate(['/']);
           } else {
             // login failed
