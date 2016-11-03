@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
+import { HeaderEventsManager } from './shared/headerEventManager';
+
 // import { Routing } from './app.routing';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -44,7 +46,7 @@ import { AuthGuard, AuthenticationService } from './auth';
       apiKey: 'AIzaSyAmjXBxqN3NNXnEr4lhyDH27mfAyPZoZOM'
     })
   ],
-  providers: [AuthGuard, AuthenticationService],
+  providers: [AuthGuard, AuthenticationService, HeaderEventsManager],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

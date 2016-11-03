@@ -5,12 +5,11 @@ import { HeaderEventsManager } from '../headerEventManager';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
-  providers: [HeaderEventsManager]
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
 
-  public showNavBar: boolean = false;
+  public showNavBar: boolean = true;
 
   constructor(private headerEventsManager: HeaderEventsManager) {
 
@@ -18,7 +17,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.headerEventsManager.showNavBar.subscribe((mode) => {
-      console.log(mode);
       this.showNavBar = mode;
     });
   }
