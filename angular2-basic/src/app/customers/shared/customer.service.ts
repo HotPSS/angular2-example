@@ -16,7 +16,7 @@ export class CustomerService {
   constructor(private http: Http, private router: Router) { }
 
   getCustomers(): Promise<CustomerModel[]> {
-    let customer = this.http.get(this.webApiUrl)
+    let customer = this.http.get('/customer')
                .toPromise()
                .then(response => response.json() as CustomerModel[])
                .catch(this.handleError);

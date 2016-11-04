@@ -9,6 +9,7 @@ import { HeaderEventsManager } from './shared/headerEventManager';
 
 // import { Routing } from './app.routing';
 import { AppRoutingModule } from './app-routing.module';
+import { AppRequestOptions } from './app.request-option';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -46,7 +47,7 @@ import { AuthGuard, AuthenticationService } from './auth';
       apiKey: 'AIzaSyAmjXBxqN3NNXnEr4lhyDH27mfAyPZoZOM'
     })
   ],
-  providers: [AuthGuard, AuthenticationService, HeaderEventsManager],
+  providers: [AppRequestOptions, AuthGuard, AuthenticationService, HeaderEventsManager],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
