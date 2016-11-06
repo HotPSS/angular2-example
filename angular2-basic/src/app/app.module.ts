@@ -9,7 +9,7 @@ import { HeaderEventsManager } from './shared/headerEventManager';
 
 // import { Routing } from './app.routing';
 import { AppRoutingModule } from './app-routing.module';
-import { AppRequestOptions } from './app.request-option';
+// import { AppRequestOptions } from './app.request-option';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +18,7 @@ import { CustomerListComponent, CustomerCreateComponent, CustomerUpdateComponent
 import { MapComponent } from './maps';
 import { LoginComponent } from './login';
 import { AuthGuard, AuthenticationService } from './auth';
+import { PersonalComponent } from './personal';
 
 /*import {
   AppComponent,
@@ -34,7 +35,8 @@ import { AuthGuard, AuthenticationService } from './auth';
     CustomerCreateComponent,
     CustomerUpdateComponent,
     MapComponent,
-    LoginComponent
+    LoginComponent,
+    PersonalComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,7 @@ import { AuthGuard, AuthenticationService } from './auth';
       apiKey: 'AIzaSyAmjXBxqN3NNXnEr4lhyDH27mfAyPZoZOM'
     })
   ],
-  providers: [AppRequestOptions, AuthGuard, AuthenticationService, HeaderEventsManager],
+  providers: [AuthGuard, AuthenticationService, HeaderEventsManager],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
