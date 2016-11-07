@@ -22,7 +22,7 @@ export class HttpClient {
   getToken(url: string, data: any): any {
     let headers = new Headers({ 'Content-Type': 'application/json' });
 
-    return this.http.get(AppConfig.webApiBaseUrl + url, { headers: headers });
+    return this.http.post(AppConfig.webApiBaseUrl + url, data, { headers: headers });
   }
 
   get(url: string): any {

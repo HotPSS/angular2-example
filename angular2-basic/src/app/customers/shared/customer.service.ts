@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, Response } from '@angular/http';
+import { Response } from '@angular/http';
 import { Router } from '@angular/router';
+import { HttpClient } from '../../http-client';
 
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
@@ -10,10 +11,10 @@ import { CustomerModel } from '.';
 @Injectable()
 export class CustomerService {
 
-  private webApiUrl = 'http://localhost:55419/api/customer';
-  private headers = new Headers({'Content-Type': 'application/json'});
+  // private webApiUrl = 'http://localhost:55419/api/customer';
+  // private headers = new Headers({'Content-Type': 'application/json'});
 
-  constructor(private http: Http, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   getCustomers(): Promise<CustomerModel[]> {
     let customer = this.http.get('/customer')
@@ -25,14 +26,14 @@ export class CustomerService {
   }
 
   getCustomer(id: number): Promise<CustomerModel> {
-    return this.http.get(this.webApiUrl + '/' + id)
+    return this.http.get('/customer/' + id)
     .toPromise()
     .then(response => response.json() as CustomerModel)
     .catch(this.handleError);
   }
 
   create(customerModel: CustomerModel): void {
-    this.http.post(this.webApiUrl, JSON.stringify(customerModel), {headers: this.headers})
+    this.http.post('/customer', JSON.stringify(customerModel))
     // .map(res => res.json())
     .subscribe(
           (data) => {
@@ -45,7 +46,7 @@ export class CustomerService {
   }
 
   update(customerModel: CustomerModel): void {
-    this.http.put(this.webApiUrl + '/' + customerModel.Id, JSON.stringify(customerModel), {headers: this.headers})
+    this.http.put('/customer/' + customerModel.Id, JSON.stringify(customerModel))
     .subscribe(
           (data) => {
             this.router.navigate(['customers']);
@@ -57,7 +58,7 @@ export class CustomerService {
   }
 
   delete(id: number): void {
-    this.http.delete(this.webApiUrl + '/' + id, {headers: this.headers})
+    this.http.delete('/customer/' + id)
     .subscribe(
           (data) => {
             this.router.navigate(['customers']);

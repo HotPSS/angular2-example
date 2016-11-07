@@ -5,12 +5,12 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { DataTableModule } from 'angular-2-data-table';
+import { HttpClient } from './http-client';
 
 import { HeaderEventsManager } from './shared/headerEventManager';
 
 // import { Routing } from './app.routing';
 import { AppRoutingModule } from './app-routing.module';
-// import { AppRequestOptions } from './app.request-option';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -50,7 +50,7 @@ import { PersonalComponent } from './personal';
       apiKey: 'AIzaSyAmjXBxqN3NNXnEr4lhyDH27mfAyPZoZOM'
     })
   ],
-  providers: [AuthGuard, AuthenticationService, HeaderEventsManager],
+  providers: [AuthGuard, AuthenticationService, HeaderEventsManager, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
