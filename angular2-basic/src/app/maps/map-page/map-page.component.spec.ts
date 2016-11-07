@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { MapComponent } from './map.component';
+import { MapComponent } from './map-page.component';
 
 describe('Component: Map', () => {
   it('should create an instance', () => {
