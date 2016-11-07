@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { DataTableModule } from 'angular-2-data-table';
 
 import { HeaderEventsManager } from './shared/headerEventManager';
 
@@ -43,7 +44,7 @@ import { PersonalComponent } from './personal';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    // Routing,
+    DataTableModule,
     NgbModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAmjXBxqN3NNXnEr4lhyDH27mfAyPZoZOM'

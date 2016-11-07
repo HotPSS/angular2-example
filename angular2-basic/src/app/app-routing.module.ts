@@ -16,7 +16,7 @@ const routes: Routes = [
     { path: 'customer/create', component: CustomerCreateComponent, canActivate: [AuthGuard] },
     { path: 'customer/update/:id', component: CustomerUpdateComponent, canActivate: [AuthGuard] },
     { path: 'map', component: MapComponent, canActivate: [AuthGuard] },
-    { path: 'personal', component: PersonalComponent },
+    { path: 'personal', component: PersonalComponent, canActivate: [AuthGuard] },
     { path: '**', redirectTo: '' }
 ];
 
