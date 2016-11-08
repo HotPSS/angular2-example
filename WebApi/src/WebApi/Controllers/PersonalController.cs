@@ -13,9 +13,9 @@ namespace WebApi.Controllers
         private PersonalService _service = new PersonalService();
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<PersonalModel> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _service.Get();
         }
 
         [HttpGet("{_start}/{_limit}/{_sort}/{_order}")]

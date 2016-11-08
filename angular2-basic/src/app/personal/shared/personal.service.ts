@@ -16,7 +16,7 @@ export class PersonalService {
 
   get(params: DataTableParams): Promise<PersonalModel[]> {
     console.log(this.queryString.paramsToQueryString(params));
-    return this.http.get('/personal/' + this.queryString.paramsToQueryString(params))
+    return this.http.get('/personal')
       .toPromise()
       .then(response => response.json() as PersonalModel[])
       .catch(this.handleError);

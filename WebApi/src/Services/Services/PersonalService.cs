@@ -9,6 +9,13 @@ namespace Services.Services
 {
     public class PersonalService
     {
+        public PersonalModel[] Get()
+        {
+            var query = MockedPersonal.GetMockData().OrderBy(p => p.Name).ToArray();
+
+            return query;
+        }
+
         public PersonalModel[] Get(DataTableRequestModel dataTableModel)
         {
             var query = MockedPersonal.GetMockData();
