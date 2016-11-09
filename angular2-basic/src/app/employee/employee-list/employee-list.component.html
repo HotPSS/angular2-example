@@ -42,6 +42,14 @@
             <span style="color: red" *ngIf="!item.active">False</span>
           </template>
         </data-table-column>
+        
+        <data-table-column
+          [header]="'Actions'"
+          [width]="100">
+          <template #dataTableCell let-item="item">
+            <button (click)="editClicked(item)" class="btn btn-sm btn-default">Edit</button>
+          </template>
+        </data-table-column>
 
       </data-table>
 </div>

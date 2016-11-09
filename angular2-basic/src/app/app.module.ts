@@ -16,7 +16,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { CustomerListComponent, CustomerCreateComponent, CustomerUpdateComponent } from './customers';
 import { MapPageComponent } from './maps/map-page/map-page.component';
 import { LoginComponent } from './login/login.component';
-import { EmployeeListComponent } from './employee';
+import { EmployeeListComponent, EmployeeUpdateComponent } from './employee';
 
 /*import {
   AppComponent,
@@ -34,7 +34,8 @@ import { EmployeeListComponent } from './employee';
     CustomerUpdateComponent,
     MapPageComponent,
     LoginComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    EmployeeUpdateComponent
   ],
   imports: [
     BrowserModule,

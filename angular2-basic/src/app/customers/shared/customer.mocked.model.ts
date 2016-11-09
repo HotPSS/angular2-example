@@ -2,21 +2,21 @@ import { CustomerModel } from '.';
 
 export const MockedCustomerModel: CustomerModel[] = [
   {
-    Id: 1,
-    Name: 'test page#1',
-    Address: 'TEST PAGE CONTENT#1',
-    Province: 'กรุงเทพมหานคร'
+    id: 1,
+    name: 'test page#1',
+    address: 'TEST PAGE CONTENT#1',
+    province: 'กรุงเทพมหานคร'
   },
   {
-    Id: 2,
-    Name: 'test page#2',
-    Address: 'TEST PAGE CONTENT#2',
-    Province: 'กาญนะจ๊ะบุรี'
+    id: 2,
+    name: 'test page#2',
+    address: 'TEST PAGE CONTENT#2',
+    province: 'กาญนะจ๊ะบุรี'
   },
   {
-    Id: 3,
-    Name: 'test page#3',
-    Address: 'TEST PAGE CONTENT#3',
-    Province: 'กรุงเทพมหานคร'
+    id: 3,
+    name: 'test page#3',
+    address: 'TEST PAGE CONTENT#3',
+    province: 'กรุงเทพมหานคร'
   }
 ];

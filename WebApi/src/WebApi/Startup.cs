@@ -42,10 +42,10 @@ namespace WebApi
 
             services.AddMvc();
 
-            services.AddMvc().AddJsonOptions(options => 
-            {
-                options.SerializerSettings.ContractResolver = new DefaultContractResolver();
-            });
+            //services.AddMvc().AddJsonOptions(options => 
+            //{
+            //    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+            //});
 
             services.AddCors(options =>
             {

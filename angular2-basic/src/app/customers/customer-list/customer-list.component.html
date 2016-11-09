@@ -13,11 +13,11 @@
   </thead>
   <tbody>
     <tr *ngFor="let customer of customerList">
-      <td>{{customer.Id}}</td>
-      <td>{{customer.Name}}</td>
-      <td>{{customer.Address}}</td>
-      <td>{{customer.Province}}</td>
-      <td><a href="javascript:void()" (click)="onUpdate(customer.Id)">Edit</a></td>
+      <td>{{customer.id}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.province}}</td>
+      <td><a href="javascript:void()" (click)="onUpdate(customer.id)">Edit</a></td>
     </tr>
   </tbody>
 </table>
